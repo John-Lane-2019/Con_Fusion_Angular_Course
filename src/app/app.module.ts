@@ -1,10 +1,12 @@
+//this module is the root module of the application
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'; //import modules from Angular core library
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-@NgModule({
+//this is a decorator. decorators are functions that modify javascript classes.
+//takes metadata to help describe the module.
+@NgModule({ 
   declarations: [
     AppComponent
   ],
@@ -13,6 +15,6 @@ import { AppComponent } from './app.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] //AppComponent is the root component
 })
 export class AppModule { }
