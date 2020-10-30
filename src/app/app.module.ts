@@ -7,11 +7,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
 //this is a decorator. decorators are functions that modify javascript classes.
 //takes metadata to help describe the module.
 @NgModule({ 
   declarations: [
-    AppComponent
+    AppComponent,
+    DishdetailComponent
   ],
   imports: [//specifies which modules will be imported to this module
     BrowserModule,
@@ -20,7 +22,7 @@ import { AppComponent } from './app.component';
     MatToolbarModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [], //drop your services in here
   bootstrap: [AppComponent] //this means to bootstrap the application we need to bootstrap the AppComponent, i.e. the root component
 })
 export class AppModule { }
