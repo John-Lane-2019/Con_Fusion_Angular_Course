@@ -24,6 +24,34 @@
         </mat-card>
   </div>
   <div fxFlex="40">
-    <p>Display the list of comments here</p>
+   <mat-list *ngIf="dish">
+     <mat-list-header>
+        <h1>Comments</h1>
+     </mat-list-header> 
+     <mat-list-item>{{dish.comments[0].comment}}</mat-list-item>
+     <mat-list-item>{{dish.comments[0].rating}} Stars</mat-list-item>
+     <mat-list-item>--{{dish.comments[0].author}} {{dish.comments[0].date | date}}</mat-list-item>
+   </mat-list>
+   <mat-list>
+     <mat-list-item>{{dish.comments[1].comment}}</mat-list-item>
+     <mat-list-item>{{dish.comments[1].rating}} Stars</mat-list-item>
+     <mat-list-item>--{{dish.comments[1].author}} {{dish.comments[1].date | date}}</mat-list-item>
+   </mat-list>
+   <mat-list>
+    <mat-list-item>{{dish.comments[2].comment}}</mat-list-item>
+    <mat-list-item>{{dish.comments[2].rating}} Stars</mat-list-item>
+    <mat-list-item>--{{dish.comments[2].author}} {{dish.comments[2].date | date}}</mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>{{dish.comments[3].comment}}</mat-list-item>
+    <mat-list-item>{{dish.comments[3].rating}} Stars</mat-list-item>
+    <mat-list-item>--{{dish.comments[3].author}} {{dish.comments[3].date | date}}</mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>{{dish.comments[4].comment}}</mat-list-item>
+    <mat-list-item>{{dish.comments[4].rating}} Stars</mat-list-item>
+    <mat-list-item>--{{dish.comments[4].author}} {{dish.comments[4].date | date}}</mat-list-item>
+  </mat-list>
+    
   </div>
 </div>
