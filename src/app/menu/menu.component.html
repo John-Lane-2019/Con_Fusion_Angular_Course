@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div fxFlex>
+    <div fxFlex> <!--creating dish objects in a loop and assigning event handlers to each object-->
         <mat-grid-list cols="2" rowHeight="200px">
             <mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)"> <!--foreach loop iterating over array of Dish objects-->
                 <img height="200px" src={{dish.image}} alt={{dish.name}}>
@@ -19,8 +19,12 @@
             </mat-grid-tile>
         </mat-grid-list>
     </div>
-
-    <app-dishdetail [dish]="selectedDish"></app-dishdetail>
+    <!--[dish] = "selectedDish" binds the dish property of dishdetail.ts to the selectedDish property of 
+    menu.component.ts . Because menu.component.ts and menu.component.html are part of the same component, 
+    I don't need to instantiate an instance of menu to access its selectedDish property. The same applies to
+    the dish property inside the app-dishdetail tags, thus the dish that gets rendered is set to whichever
+    dish is clicked. -->
+    <app-dishdetail [dish]="selectedDish"></app-dishdetail> 
     
 
 </div>

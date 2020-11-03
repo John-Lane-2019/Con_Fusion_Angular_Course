@@ -13,7 +13,7 @@ export const DISHES: Dish [] = [{
     comments: [
         {
             rating: 5,
-            comment: 'Imagine all the eatables, living in conFusion!',
+            comment: 'Fantastical',
             author: 'John Lemon',
             date: '2012-10-16T17:57:28.556094Z'
         },
@@ -31,7 +31,7 @@ export const DISHES: Dish [] = [{
         },
         {
             rating: 4,
-            comment: 'Ultimate, Reaching for the stars!',
+            comment: 'It\'s fookin\' brilliant.',
             author: 'Ringo Starry',
             date: '2013-12-02T17:57:28.556094Z'
         },
@@ -139,8 +139,8 @@ export const DISHES: Dish [] = [{
     comments: [
         {
             rating: 5,
-            comment: 'Imagine all the eatables, living in conFusion!',
-            author: 'John Lemon',
+            comment: 'Diabeetus',
+            author: 'William Grimly',
             date: '2012-10-16T17:57:28.556094Z'
         },
         {
