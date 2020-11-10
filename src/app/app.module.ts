@@ -14,6 +14,8 @@ import { MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { DishService } from './services/dish.service';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 //this is a decorator. decorators are functions that modify javascript classes.
 //takes metadata to help describe the module.
 @NgModule({ 
@@ -21,6 +23,8 @@ import { DishService } from './services/dish.service';
     AppComponent,
     MenuComponent,
     DishdetailComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [//specifies which modules will be imported to this module
     BrowserModule,
@@ -32,7 +36,6 @@ import { DishService } from './services/dish.service';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-    
   ],
   providers: [DishService], //drop your services in here
   bootstrap: [AppComponent] //this means to bootstrap the application we need to bootstrap the AppComponent, i.e. the root component
