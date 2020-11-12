@@ -9,7 +9,7 @@ export class DishService {
 
   constructor() { }
 
-  getDishes(): Dish[]{
+  getDishes(): Dish[]{//parameterless function with return type of Dish[] that returns an array of json objects
     return DISHES;
   }
 }
