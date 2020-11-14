@@ -13,6 +13,7 @@ import 'hammerjs';
 //component imports:
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { DishService } from './services/dish.service';
+import { PromotionService } from './services/promotion.service';
 import { HeaderComponent } from './header/header.component';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -45,7 +46,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     MatCardModule,
     MatButtonModule,
   ],
-  providers: [DishService], //drop your services in here
+  providers: [DishService, PromotionService], //drop your services in here
   bootstrap: [AppComponent] //this means to bootstrap the application we need to bootstrap the AppComponent, i.e. the root component
 })
 export class AppModule { }

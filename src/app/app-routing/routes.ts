@@ -10,7 +10,7 @@ export const routes: Routes = [
     {path: 'menu', component: MenuComponent},
     {path: 'dishdetail', component: DishdetailComponent},
     {path: 'about', component: AboutComponent},
-    {path: 'contact', component: ContactComponent},
+    {path: 'contactus', component: ContactComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'}//redirects to home by default if no arguments passed in url
 ]; //routes are an array of javascript objects
    //path is a key, string value specifies component name
