@@ -11,7 +11,7 @@
 
     <div fxFlex> <!--creating dish objects in a loop and assigning event handlers to each object-->
         <mat-grid-list cols="2" rowHeight="200px">
-            <mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)"> <!--foreach loop iterating over array of Dish objects-->
+            <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]"> <!--foreach loop iterating over array of Dish objects-->
                 <img height="200px" src={{dish.image}} alt={{dish.name}}>
                 <mat-grid-tile-footer>
                     <h1 matLine>{{dish.name | uppercase}}</h1>
@@ -24,7 +24,7 @@
     I don't need to instantiate an instance of menu to access its selectedDish property. The same applies to
     the dish property inside the app-dishdetail tags, thus the dish that gets rendered is set to whichever
     dish is clicked. So the dish property getting rendered is set by selectedDish-->
-    <app-dishdetail [dish]="selectedDish"></app-dishdetail> 
+   
     
 
 </div>

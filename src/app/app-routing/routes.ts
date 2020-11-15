@@ -8,7 +8,7 @@ import { ContactComponent } from '../contact/contact.component';
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'menu', component: MenuComponent},
-    {path: 'dishdetail', component: DishdetailComponent},
+    {path: 'dishdetail/:id', component: DishdetailComponent},
     {path: 'about', component: AboutComponent},
     {path: 'contactus', component: ContactComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'}//redirects to home by default if no arguments passed in url

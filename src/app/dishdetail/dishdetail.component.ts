@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Params, ActivatedRoute } from '@angular/router/'; //lets you pass paramaters between components
+import { Location } from '@angular/common'; //lets you track a page's history in browser
 import { Dish } from '../shared/dish';
+import {DishService} from '../services/dish.service';
 
 @Component({
   selector: 'app-dishdetail',
@@ -8,12 +11,19 @@ import { Dish } from '../shared/dish';
 })
 export class DishdetailComponent implements OnInit {
 
-  @Input() //input decorator lets you bind a property from one component to another. 
+ 
   dish: Dish;
 
-  constructor() { }
+  constructor(private dishService: DishService,
+    private location: Location, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    let id = this.route.snapshot.params['id'];//id pass as paramter
+    this.dish = this.dishService.getDish(id);// dish set to dish id passed.
+  }
+
+  goBack(): void {
+    this.location.back(); //back() uses the location service to take you back to the previous item in the browser history
   }
 
 }
