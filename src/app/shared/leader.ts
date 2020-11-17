@@ -1,6 +1,4 @@
 export class Leader{
-    constructor(){}
-
     id: string;
     name: string;
     image: string;
