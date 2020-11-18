@@ -10,6 +10,10 @@ import { MatGridListModule} from '@angular/material/grid-list';
 import { MatCardModule} from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
 import 'hammerjs';
 //component imports:
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
@@ -25,6 +29,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LeaderService } from './services/leader';
 import { LoginComponent } from './login/login.component';
+
 //this is a decorator. decorators are functions that modify javascript classes.
 //takes metadata to help describe the module.
 @NgModule({ 
@@ -49,7 +54,11 @@ import { LoginComponent } from './login/login.component';
     MatGridListModule,
     MatCardModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    FormsModule
   ],
   providers: [DishService, PromotionService, LeaderService], //drop your services in here
   bootstrap: [AppComponent], //this means to bootstrap the application we need to bootstrap the AppComponent, i.e. the root component
