@@ -3,6 +3,8 @@ import { Dish } from '../shared/dish';//import Dish class that models dish data
 import { DishService } from '../services/dish.service';//import service
 import { Promotion } from '../shared/promotion';
 import { PromotionService } from '../services/promotion.service';
+import { LEADERS } from '../shared/leaders';
+import { Leader } from '../shared/leader';
 
 @Component({
   selector: 'app-home',
@@ -16,10 +18,12 @@ export class HomeComponent implements OnInit {
 
   dish: Dish; //give VM attribute 'dish' set to imported class 'Dish'
   promotion: Promotion; //give VM attribute 'promotion' set to imported class 'Promotion'
+  featuredLeader: Leader;
 
   ngOnInit(): void {
     this.dish = this.dishService.getFeaturedDish(); //set component's dish property through injected service
     this.promotion = this.promotionService.getFeaturedPromotion(); //same as above.
+    this.featuredLeader = LEADERS[3];
   }
 
 }
