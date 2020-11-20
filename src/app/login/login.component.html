@@ -4,16 +4,20 @@
   <button mat-button mat-dialog-close>&times;</button>
 </mat-toolbar>
 
-<p>{{user | json }}</p>
+<p>{{user | json }}</p><!--renders a json object to gui-->>
 
-<form novalidate (ngSubmit)="onSubmit()">
+<form novalidate #loginForm = "ngForm" (ngSubmit)="onSubmit()"><!--novalidate switches off HTML5 validations #loginForm will let us track the state of the form-->>
   <mat-dialog-content>
     <p>
       <mat-form-field>
-        <input matInput placeholder="Username" type="text" [(ngModel)]="user.username" name="username">
+        <input matInput placeholder="Username" type="text" 
+        [(ngModel)]="user.username" name="username" #username="ngModel" required>
+        <mat-error *ngIf="username.errors?.required">Username is required</mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password">
+        <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" name="password"
+        #password="ngModel" required>
+        <mat-error *ngIf="password.errors?.required">Password is required</mat-error>
       </mat-form-field>
       <mat-checkbox [(ngModel)] = "user.remember" name="remember">Remember Me</mat-checkbox>
     </p>
@@ -21,7 +25,14 @@
   <mat-dialog-actions>
     <span class="flex-spacer"></span>
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button type="submit" class="background-primary text-floral-white">Login</button>
+    <button mat-button type="submit" class="background-primary text-floral-white"
+    [disabled]="loginForm.form.invalid">Login</button>
   </mat-dialog-actions>
 </form>
 <!--[()] banana in a box syntax for 2 way binding allows component properties to be updated and displayed on the fly-->
+<!--In most cases, Angular sets the template variable's 
+value to the element on which it occurs. 
+In the previous example, phone refers to the phone number <input>. 
+The button's click handler passes the <input> value to the component's callPhone() method.
+With NgForm, itemForm is a reference to the NgForm directive with the ability to track the value and validity 
+of every control in the form.-->
