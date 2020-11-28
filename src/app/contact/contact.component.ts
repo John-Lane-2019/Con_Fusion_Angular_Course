@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Feedback, ContactType } from '../shared/feedback';
+
 
 
 @Component({
@@ -10,6 +11,8 @@ import { Feedback, ContactType } from '../shared/feedback';
 })
 export class ContactComponent implements OnInit {
 
+  @ViewChild('fform') feedbackFormDirective;
+  
   feedbackForm: FormGroup;
   feedback: Feedback;
   contactType = ContactType;
@@ -18,14 +21,16 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
   createForm(){
     this.feedbackForm = this.fb.group({
-      firstName: '',
-      lastName: '',
-      telNum: 0,
-      email: '',
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      telNum: [0, Validators.required],
+      email: ['', Validators.required],
+      agree: false,
       contactType: 'None',
       message: ''
 
@@ -33,11 +38,17 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(){
-    this.feedback=this.feedbackForm.value;
+    this.feedback=this.feedbackForm.value;//value property of a form returns control values which in this case mirror structure of feedback class.
     console.log(this.feedback);
-    this.feedbackForm.reset();
-  } //value property of a form returns control values which in this case mirror structure of feedback class.
-    
-
-
+    this.feedbackForm.reset({
+      firstName: '',
+      lastName: '',
+      telNum: '', 
+      email: '', 
+      agree: false,
+      contacttype: 'None',
+      message: ''
+    });
+    this.feedbackFormDirective.resetForm();
+  } 
 }
