@@ -17,8 +17,7 @@ export class MenuComponent implements OnInit {
   constructor(private dishService: DishService) { }
 
   ngOnInit(): void {//this is a lifecycle method called whenever component instantiated
-     this.dishService.getDishes()
-      .then(dishes => this.dishes = dishes); //dishes array to array returned by service
+     this.dishService.getDishes().subscribe(dishes => this.dishes = dishes) //dishes array to array returned by service
   }
 
   onSelect(dish: Dish){ //takes a Dish object as argument, sets selectedDish variable for template to dish passed as arg

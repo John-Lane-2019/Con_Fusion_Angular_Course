@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import 'hammerjs';
 //component imports:
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
@@ -46,6 +47,7 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     ContactComponent,
     LoginComponent,
+    
   ],
   imports: [//specifies which modules will be imported to this module
     BrowserModule,
@@ -64,7 +66,8 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatProgressSpinnerModule
   ],
   providers: [DishService, PromotionService, LeaderService], //drop your services in here
   bootstrap: [AppComponent], //this means to bootstrap the application we need to bootstrap the AppComponent, i.e. the root component

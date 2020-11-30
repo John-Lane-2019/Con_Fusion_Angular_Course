@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+//import { resolve } from 'dns';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { Leader } from '../shared/leader';
 import { LEADERS } from '../shared/leaders';
 
@@ -8,7 +11,8 @@ import { LEADERS } from '../shared/leaders';
 export class LeaderService{
     constructor(){}
 
-    getLeaders(): Promise<Leader[]>{
-        return Promise.resolve(LEADERS);
+    getLeaders(): Observable<Leader[]>{
+        return of(LEADERS).pipe( delay (2000));
+        
     }
 }

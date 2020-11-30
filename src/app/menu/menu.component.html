@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div fxFlex> <!--creating dish objects in a loop and assigning event handlers to each object-->
+    <div fxFlex *ngIf="dishes"> <!--creating dish objects in a loop and assigning event handlers to each object-->
         <mat-grid-list cols="2" rowHeight="200px">
             <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]"> <!--foreach loop iterating over array of Dish objects-->
                 <img height="200px" src={{dish.image}} alt={{dish.name}}>
@@ -18,6 +18,10 @@
                 </mat-grid-tile-footer>
             </mat-grid-tile>
         </mat-grid-list>
+    </div>
+    <div fxFlex [hidden]="dishes">
+        <mat-spinner></mat-spinner><h4>Loading...Please Wait :)</h4>
+
     </div>
     <!--[dish] = "selectedDish" binds the dish property of dishdetail.ts to the selectedDish property of 
     menu.component.ts . Because menu.component.ts and menu.component.html are part of the same component, 

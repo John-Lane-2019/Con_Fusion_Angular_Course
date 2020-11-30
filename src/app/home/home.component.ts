@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
   featuredLeader: Leader;
 
   ngOnInit(): void {
-    this.dishService.getFeaturedDish().then(dish => this.dish = dish); //set component's dish property through injected service
-    this.promotionService.getFeaturedPromotion().then(promotion => this.promotion = promotion); //same as above.
+    this.dishService.getFeaturedDish().subscribe(dish => this.dish = dish); //set component's dish property through injected service
+    this.promotionService.getFeaturedPromotion().subscribe(promotion => this.promotion = promotion); //same as above.
     this.featuredLeader = LEADERS[3];
   }
 
