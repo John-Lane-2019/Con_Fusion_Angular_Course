@@ -4,6 +4,8 @@ import { Location } from '@angular/common'; //lets you track a page's history in
 import { Dish } from '../shared/dish';
 import {DishService} from '../services/dish.service';
 import { switchMap } from 'rxjs/operators';
+
+
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.component.html',
@@ -11,11 +13,18 @@ import { switchMap } from 'rxjs/operators';
 })
 export class DishdetailComponent implements OnInit {
 
+  formatLabel(value: number){
+    if(value >= 6){
+      return Math.round(value / 6);
+    }
+    return value;
+  }
  
   dish: Dish;
   dishIds: string[];
   prev: string;
   next: string;
+
 
   constructor(private dishService: DishService,
     private location: Location, private route: ActivatedRoute) { }
@@ -36,5 +45,7 @@ export class DishdetailComponent implements OnInit {
   goBack(): void {
     this.location.back(); //back() uses the location service to take you back to the previous item in the browser history
   }
+
+
 
 }

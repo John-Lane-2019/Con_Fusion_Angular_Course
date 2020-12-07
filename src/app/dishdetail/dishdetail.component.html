@@ -60,6 +60,23 @@
     <mat-list-item>{{dish.comments[4].rating}} Stars</mat-list-item>
     <mat-list-item>--{{dish.comments[4].author}} {{dish.comments[4].date | date}}</mat-list-item>
   </mat-list>
-    
+  <form novalidate>
+    <p>
+      <mat-form-field>
+        <input matInput class="comment" formControlName="name" placeholder="Name" type="text" required>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-slider thumbLabel [displayWith]="formatLabel" min="1" max="5" tickInterval="5"></mat-slider>
+    </p>
+    <p>
+      <mat-form-field>
+        <input matInput class="comment" formControlName="comment" type="text" placeholder="Your Comment" required>
+      </mat-form-field>
+    </p>
+  
+  </form>
+  
   </div>
+  
 </div>
